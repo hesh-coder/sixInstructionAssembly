@@ -46,11 +46,14 @@ public class simulator {
 
 		for (String current : memLocations) {
 			currentSet = memory.get(current);
-			currentInstructions = currentSet.split(",").trim();
-			operator = currentInstructions[0];
+			currentInstructions = currentSet.split(",");
+			operator = currentInstructions[0].trim();
 
 			switch (operator) {
 				case "1": //set
+					String dst = currentInstructions[1].trim();
+					String k = currentInstructions[2].trim();
+					setMemory(dst, k);
 					break;
 				case "2": //beq
 					break;
@@ -64,5 +67,9 @@ public class simulator {
 					break;
 			}
 		}
+	}
+
+	public static void setMemory(String dst, String k) {
+			memory.put(dst, k);
 	}
 }
