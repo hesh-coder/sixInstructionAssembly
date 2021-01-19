@@ -1,0 +1,9 @@
+set, zero, 0
+set, one, 1
+set, a, 3
+set, b, 2
+set, c, 2
+beq, 231, a, zero
+mul, c, c, b
+sub, a, a, one
+beq, 215, zero, zero 
